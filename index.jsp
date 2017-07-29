@@ -1,44 +1,73 @@
 <html>
 
   <head>
-    <title>Test Page</title>
+    <title>Basement Lights</title>
   </head>
 
   <body>
-    <h1>Things are about to change</h1>
-    <img src="images/buddy.jpg">
-    <br/>    
 
+    <h1>Basement</h1>
     <%@ page import="java.lang.Process" %>
- 
+    <%@ page import="java.io.File" % >
+    <%@ page import="java.nio.file.Files" %>
+
     <%
-      out.println("Your IP address is "+request.getRemoteAddr());
-      //Process proc = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 1");
-      //proc.waitFor();      
+
+      Path file = "/home/pi/Documents/WebApps/Resources/switch";
+      byte[] switch;
+
+      try
+      {
+        switch = Files.readAllBytes(file);
+
+        if(switch[0]=='0')
+          out.println("The lights are off");
+        else
+          out.println("The lights are on");
+      }
+      catch(Exception e)
+      {
+        out.println("Couldn't read file: "+e.toString());
+      }
+
       if(request.getParameter("onButton") != null)
       {
       		Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 1");
                 p.waitFor();
+          byte[] s = '1';
+          try
+          {
+            Files.write(file, s, WRITE, TRUNCATE_EXISTING);
+          }
+          catch(Exception e)
+          {
+            out.println("Couldn't write: "+e.toString());
+          }
       }
 
       if(request.getParameter("offButton") != null)
       {
                 Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 0");
                 p.waitFor();
+                byte[] s = '0';
+                try
+                {
+                  Files.write(file, s, WRITE, TRUNCATE_EXISTING);
+                }
+                catch(Exception e)
+                {
+                  out.println("Couldn't write: "+e.toString());
+                }
       }
+
+
     %>
 
-    <!--form name="buttons" method="post">
-       <input type="BUTTON" name="onButton" value="ON">
-       <input type="BUTTON" name="offButton" value="OFF">
-    </form-->
+
 <form method="post">
-<input type="submit" id="onButton" name="onButton" value="ON"/>
-<input type="submit" id="offButton" name="offButton" value="OFF"/>
-</form>  
+<input type="submit" id="onButton" name="onButton" value="ON"  style="height:50px; width:50px"/>
+<input type="submit" id="offButton" name="offButton" value="OFF" style="height:50px; width:50px"/>
+</form>
 
   </body>
 </html>
-
-
-
