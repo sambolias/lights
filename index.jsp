@@ -15,11 +15,12 @@
 
     <%
 
-      Path file = "/home/pi/Documents/WebApps/Resources/switch.txt";
+      Path file;
       byte[] status;
 
       try
       {
+        file.resolve("/home/pi/Documents/WebApps/Resources/switch");
         status = Files.readAllBytes(file);
 
         if(status[0]=='0')
@@ -36,7 +37,8 @@
       {
       		Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 1");
                 p.waitFor();
-          byte[] s = "1";
+          byte[] s;
+          s[0]='1'
           try
           {
             Files.write(file, s, WRITE, TRUNCATE_EXISTING);
@@ -51,7 +53,8 @@
       {
                 Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 0");
                 p.waitFor();
-                byte[] s = "0";
+                byte[] s;
+                s[0]='0'
                 try
                 {
                   Files.write(file, s, WRITE, TRUNCATE_EXISTING);
