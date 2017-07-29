@@ -15,6 +15,9 @@
     <%@ page import="java.nio.file.StandardOpenOption" %>
     <%@ page import="java.nio.file.FileSystems" %>
     <%
+	//set page to reload every 60 seconds (probably excessive)
+	response.setIntHeader("Refresh", 60);
+
 
       Path file = FileSystems.getDefault().getPath("/home/pi/Documents/WebApps/Resources/switch");
       byte[] status = new byte[1];
