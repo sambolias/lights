@@ -14,14 +14,14 @@
 
     <%
 
-      Path file = "/home/pi/Documents/WebApps/Resources/switch";
-      byte[] switch;
+      Path file = "/home/pi/Documents/WebApps/Resources/switch.txt";
+      byte[] status;
 
       try
       {
-        switch = Files.readAllBytes(file);
+        status = Files.readAllBytes(file);
 
-        if(switch[0]=='0')
+        if(status[0]=='0')
           out.println("The lights are off");
         else
           out.println("The lights are on");
