@@ -15,8 +15,8 @@
     <%@ page import="java.nio.file.StandardOpenOption" %>
     <%@ page import="java.nio.file.FileSystems" %>
     <%
-	//set page to reload every 60 seconds (probably excessive)
-	response.setIntHeader("Refresh", 60);
+    	//set page to reload every 60 seconds (probably excessive)
+    	response.setIntHeader("Refresh", 60);
 
 
       Path file = FileSystems.getDefault().getPath("/home/pi/Documents/WebApps/Resources/switch");
@@ -69,7 +69,7 @@
                 {
                   out.println("Couldn't write: "+e.toString());
                 }
-      
+
        		 response.setHeader("REFRESH", "0");
 
 	}
@@ -79,8 +79,8 @@
 
 
 <form method="post">
-<input type="submit" id="onButton" name="onButton" value="ON"  style="height:50px; width:50px"/>
-<input type="submit" id="offButton" name="offButton" value="OFF" style="height:50px; width:50px"/>
+<input type="submit" id="onButton" name="onButton" value="ON"  style="height:100px; width:100px; padding:50px"/>
+<input type="submit" id="offButton" name="offButton" value="OFF" style="height:100px; width:100px; padding:50px"/>
 </form>
 
   </body>
