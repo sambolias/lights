@@ -5,7 +5,7 @@
   </head>
 
   <body>
-    <h1>Oh Shit, it works</h1>
+    <h1>Things are about to change</h1>
     <img src="images/buddy.jpg">
     <br/>    
 

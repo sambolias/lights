@@ -1,0 +1,1 @@
+sudo cp -r /home/pi/Documents/WebApps/lights $CATALINA_HOME/webapps
