@@ -11,6 +11,7 @@
     <%@ page import="java.lang.Process" %>
     <%@ page import="java.io.File" %>
     <%@ page import="java.nio.file.Files" %>
+    <%@ page import="java.nio.file.Path" %>
 
     <%
 
@@ -35,7 +36,7 @@
       {
       		Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 1");
                 p.waitFor();
-          byte[] s = '1';
+          byte[] s = "1";
           try
           {
             Files.write(file, s, WRITE, TRUNCATE_EXISTING);
@@ -50,7 +51,7 @@
       {
                 Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 0");
                 p.waitFor();
-                byte[] s = '0';
+                byte[] s = "0";
                 try
                 {
                   Files.write(file, s, WRITE, TRUNCATE_EXISTING);
