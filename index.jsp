@@ -48,6 +48,8 @@
           {
             out.println("Couldn't write: "+e.toString());
           }
+       	response.setHeader("REFRESH", "0");
+
       }
 
       if(request.getParameter("offButton") != null)
@@ -64,7 +66,10 @@
                 {
                   out.println("Couldn't write: "+e.toString());
                 }
-      }
+      
+       		 response.setHeader("REFRESH", "0");
+
+	}
 
 
     %>
