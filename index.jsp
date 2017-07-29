@@ -79,8 +79,8 @@
 
 
 <form method="post">
-<input type="submit" id="onButton" name="onButton" value="ON"  style="height:100px; width:100px; padding:50px"/>
-<input type="submit" id="offButton" name="offButton" value="OFF" style="height:100px; width:100px; padding:50px"/>
+<input type="submit" id="onButton" name="onButton" value="ON"  style="height:100px; width:100px; padding:50px; margin:50px"/>
+<input type="submit" id="offButton" name="offButton" value="OFF" style="height:100px; width:100px; padding:50px; margin:50px"/>
 </form>
 
   </body>
