@@ -12,15 +12,16 @@
     <%@ page import="java.io.File" %>
     <%@ page import="java.nio.file.Files" %>
     <%@ page import="java.nio.file.Path" %>
-
+    <%@ page import="java.nio.file.StandardOpenOption" %>
+    <%@ page import="java.nio.file.FileSystems" %>
     <%
 
-      Path file;
-      byte[] status;
+      Path file = FileSystems.getDefault().getPath("/home/pi/Documents/WebApps/Resources/switch");
+      byte[] status = new byte[1];
 
       try
       {
-        file.resolve("/home/pi/Documents/WebApps/Resources/switch");
+ //       file.resolve("/home/pi/Documents/WebApps/Resources/switch");
         status = Files.readAllBytes(file);
 
         if(status[0]=='0')
@@ -37,11 +38,11 @@
       {
       		Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 1");
                 p.waitFor();
-          byte[] s;
-          s[0]='1'
+          byte[] s = new byte[1];
+          s[0]='1';
           try
           {
-            Files.write(file, s, WRITE, TRUNCATE_EXISTING);
+            Files.write(file, s, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
           }
           catch(Exception e)
           {
@@ -53,12 +54,12 @@
       {
                 Process p = Runtime.getRuntime().exec("sudo /home/pi/Documents/c++/GPIO/GPIOcontrols/pout 4 0");
                 p.waitFor();
-                byte[] s;
-                s[0]='0'
+                byte[] s = new byte[1];
+                s[0]='0';
                 try
                 {
-                  Files.write(file, s, WRITE, TRUNCATE_EXISTING);
-                }
+                	Files.write(file, s, StandardOpenOption.WRITE, StandardOpenOption.TRUNCATE_EXISTING);
+		}
                 catch(Exception e)
                 {
                   out.println("Couldn't write: "+e.toString());
