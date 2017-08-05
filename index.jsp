@@ -79,6 +79,11 @@
     %>
     <!--*********************END OF JSP, JS FOR SIZING*******************-->
 
+<form method="post">
+  <input type="submit"  id="onButton" name="onButton" value="ON" />
+  <input type="submit"  id="offButton" name="offButton" value="OFF" />
+</form>
+
 <script type="text/javascript">
   
   var w = window.innerWidth
@@ -109,10 +114,7 @@
 </script>
 
 
-<form method="post">
-  <input type="submit"  id="onButton" name="onButton" value="ON" />
-  <input type="submit"  id="offButton" name="offButton" value="OFF" />
-</form>
+
 
 <!-- <form method="post">
 <input type="submit" id="onButton" name="onButton" value="ON"  style="height:100px; width:100px; padding:50px; margin:50px"/>
