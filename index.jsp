@@ -95,8 +95,8 @@
   || document.body.clientHeight; 
 
 
-  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/2)+"px;";
-  document.write(bSize);
+  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/2.5)+"px;";
+  //document.write(bSize);
 
  // var bh=Math.floor(h/3)+"px;";
   //var bw=Math.floor(w/2)+"px;";
