@@ -77,12 +77,14 @@
 
 
     %>
-    <!--*********************END OF JSP, JS FOR SIZING*******************-->
+    
 
 <form method="post">
   <input type="submit" style="#" id="onButton" name="onButton" value="ON" />
   <input type="submit" style="#" id="offButton" name="offButton" value="OFF" />
 </form>
+
+<!--*********************END OF JSP, JS FOR SIZING*******************-->
 
 <script type="text/javascript">
   
