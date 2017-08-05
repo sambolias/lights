@@ -90,7 +90,7 @@
   || document.body.clientHeight; 
 
 
-  var bSize="height:"+(h/3)+"px; width:"+(w/2)+"px;";
+  var bSize="height:"+Math.floor(h/3)+"px; width:"+(w/2)+"px;";
   document.write(bSize);
 
   document.getElementById("onButton").setAttribute("style", bSize);
