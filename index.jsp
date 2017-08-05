@@ -91,6 +91,7 @@
 
 
   var bSize="height:"+(h/3)+"px; width:"+(w/2)+"px;";
+  document.write(bSize);
 
   document.getElementById("onButton").setAttribute("style", bSize);
   document.getElementById("offButton").setAttribute("style", bSize);
@@ -99,8 +100,8 @@
 
 
 <form method="post">
-<input type="submit" id="onButton" name="onButton" value="ON"  style="#"/>
-<input type="submit" id="offButton" name="offButton" value="OFF" style="#"/>
+<input type="submit" style="#" id="onButton" name="onButton" value="ON" />
+<input type="submit" style="#" id="offButton" name="offButton" value="OFF" />
 </form>
 
 <!-- <form method="post">
