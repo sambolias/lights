@@ -90,8 +90,8 @@
   || document.body.clientHeight; 
 
 
-  //var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/2)+"px;";
-  //document.write(bSize);
+  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/2)+"px;";
+  document.write(bSize);
 
   var bh=Math.floor(h/3)+"px;";
   var bw=Math.floor(w/2)+"px;";
@@ -102,7 +102,7 @@
   //document.getElementById("onButton").setAttribute("style", bSize);
   //document.getElementById("offButton").setAttribute("style", bSize);
 
-  var test=document.getElementById("onButton").getAttribute("name") + "is what its called";
+  var test=document.getElementById("onButton").getAttribute("name")+"is what its called";
 
   document.write(test);
 
