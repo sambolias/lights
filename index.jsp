@@ -16,6 +16,7 @@
     <%@ page import="java.nio.file.FileSystems" %>
     <%
     	//set page to reload every 60 seconds (probably excessive)
+    //need to set up listener on file to do this, TomCat context listener should work
     	response.setIntHeader("Refresh", 60);
 
 
@@ -24,7 +25,7 @@
 
       try
       {
- //       file.resolve("/home/pi/Documents/WebApps/Resources/switch");
+
         status = Files.readAllBytes(file);
 
         if(status[0]=='0')
@@ -76,12 +77,36 @@
 
 
     %>
+    <!--*********************END OF JSP, JS FOR SIZING*******************-->
+
+<script type="text/javascript">
+  
+  var w = window.innerWidth
+  || document.documentElement.clientWidth
+  || document.body.clientWidth;
+
+  var h = window.innerHeight
+  || document.documentElement.clientHeight
+  || document.body.clientHeight; 
+
+
+  var bSize="height:"+(h/3)+"px; width:"+(w/2)+"px;";
+
+  document.getElementById("onButton").setAttribute("style", bSize);
+  document.getElementById("offButton").setAttribute("style", bSize);
+
+</script>
 
 
 <form method="post">
+<input type="submit" id="onButton" name="onButton" value="ON"  style="#"/>
+<input type="submit" id="offButton" name="offButton" value="OFF" style="#"/>
+</form>
+
+<!-- <form method="post">
 <input type="submit" id="onButton" name="onButton" value="ON"  style="height:100px; width:100px; padding:50px; margin:50px"/>
 <input type="submit" id="offButton" name="offButton" value="OFF" style="height:100px; width:100px; padding:50px; margin:50px"/>
-</form>
+</form> -->
 
   </body>
 </html>
