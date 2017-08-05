@@ -102,6 +102,10 @@
   //document.getElementById("onButton").setAttribute("style", bSize);
   //document.getElementById("offButton").setAttribute("style", bSize);
 
+  var test=document.getElementById("onButton").getAttribute("name");
+
+  document.write(test);
+
 </script>
 
 
