@@ -95,7 +95,7 @@
   || document.body.clientHeight; 
 
 
-  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/2.5)+"px; padding:50px; margin:50px";
+  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:50px; margin:50px";
   /////document.write(bSize);
 
  // var bh=Math.floor(h/3)+"px;";
