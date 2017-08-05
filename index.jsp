@@ -90,18 +90,24 @@
   || document.body.clientHeight; 
 
 
-  var bSize="height:"+Math.floor(h/3)+"px; width:"+(w/2)+"px;";
-  document.write(bSize);
+  //var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/2)+"px;";
+  //document.write(bSize);
 
-  document.getElementById("onButton").setAttribute("style", bSize);
-  document.getElementById("offButton").setAttribute("style", bSize);
+  var bh=Math.floor(h/3)+"px;";
+  var bw=Math.floor(w/2)+"px;";
+
+  document.getElementById("onButton").style["height"] = bh;
+  document.getElementById("offButton").style["width"]  = bw;
+
+  //document.getElementById("onButton").setAttribute("style", bSize);
+  //document.getElementById("offButton").setAttribute("style", bSize);
 
 </script>
 
 
 <form method="post">
-<input type="submit" style="#" id="onButton" name="onButton" value="ON" />
-<input type="submit" style="#" id="offButton" name="offButton" value="OFF" />
+  <input type="submit"  id="onButton" name="onButton" value="ON" />
+  <input type="submit"  id="offButton" name="offButton" value="OFF" />
 </form>
 
 <!-- <form method="post">
