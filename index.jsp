@@ -2,12 +2,44 @@
 
   <style>
 
+    body
+    {
+      background-color: black;
+    }
+
     h1
     {
       margin: 50px;
       padding: 50px;
       text-align: center;
       font-size: 100px;
+    }
+
+    .d1
+    {
+      border-radius: 50px;
+      background-color: #ff4f2b;
+      box-shadow: 5px;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .d2
+    {
+      border-radius: 50px;
+      background-color: #83f74d;
+      box-shadow: 5px;
+      margin: 10px;
+      padding: 10px;
+    }
+
+    .d3
+    {
+      border-radius: 50px;
+      background-color: #f7e64d;
+      box-shadow: 5px;
+      margin: 10px;
+      padding: 10px;
     }
 
   </style>
@@ -18,8 +50,10 @@
 
   <body>
 
+   <div class="d1"> 
     <h1>Basement</h1>
 
+    <div class="d2">
     <%@ page import="java.lang.Process" %>
     <%@ page import="java.io.File" %>
     <%@ page import="java.nio.file.Files" %>
@@ -90,7 +124,7 @@
 
     %>
     
-
+<div class="d3">
 <form method="post">
   <input type="submit" style="#" id="onButton" name="onButton" value="ON" />
   <input type="submit" style="#" id="offButton" name="offButton" value="OFF" />
@@ -113,7 +147,7 @@
   //var oncol = "#69ebfa";
   var oncol = "#799ced; ";
   var offcol = "#91c6ff; ";
-  var onattrib = "box-shadow: 0 5px #666; transform: translateY(4px);";
+  var onattrib = "box-shadow: 0 5px #666; transform: translateY(7px);";
   var offattrib = "box-shadow: 0 9px #999;";
   var on = offcol+offattrib;
   var off = offcol+offattrib;
@@ -129,7 +163,7 @@
     off = oncol+onattrib;
   }
 
-  var pad=Math.floor(w/3/4.5);
+  var pad=Math.floor(w/3/7);
 
   var onStyle="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
               "px; font-size:50px; border-radius: 25px; background-color: "+on;
@@ -140,9 +174,15 @@
   document.getElementById("onButton").setAttribute("style", onStyle);
   document.getElementById("offButton").setAttribute("style", offStyle);
 
+  //trying to move outer div down a bit for mobile
+  if(h > w)
+  {
+    document.getElementByClassName("d1").style["margin-top"] = "50px";
+  }
+
 </script>
 
-
+</div></div></div>
 
   </body>
 </html>
