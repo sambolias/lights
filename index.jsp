@@ -4,7 +4,7 @@
 
     body
     {
-      background-color: black;
+      background-color: #050c73;
     }
 
     h1
@@ -18,7 +18,7 @@
     .d1
     {
       border-radius: 50px;
-      background-color: #ff4f2b;
+      background-color: #4350fa;
       box-shadow: 5px;
       margin: 10px;
       padding: 10px;
@@ -27,7 +27,7 @@
     .d2
     {
       border-radius: 50px;
-      background-color: #83f74d;
+      background-color: #7c84f7;
       box-shadow: 5px;
       margin: 10px;
       padding: 10px;
@@ -36,7 +36,7 @@
     .d3
     {
       border-radius: 50px;
-      background-color: #f7e64d;
+      background-color: #b6bbfa;
       box-shadow: 5px;
       margin: 10px;
       padding: 10px;
