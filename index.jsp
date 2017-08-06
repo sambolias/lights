@@ -111,7 +111,8 @@
 
   var pad=Math.floor(w/3/4.5);
 
-  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+"px; font-size:50px";
+  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
+              "px; font-size:50px; border-radius: 25px; background-color: #799ced;";
 
   document.getElementById("onButton").setAttribute("style", bSize);
   document.getElementById("offButton").setAttribute("style", bSize);
