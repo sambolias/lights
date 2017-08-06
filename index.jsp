@@ -43,7 +43,7 @@
         if(status[0]=='0')
           out.println("<span style=\"font-size: 50px; margin: auto; display: table;\">The lights are off</span>");
         else
-          out.println("<span style=\"font-size: 50px; margin: auto; display: table; \">The lights are on</span>");
+          out.println("<span id=\"light\" style=\"font-size: 50px; margin: auto; display: table; \">The lights are on</span>");
       }
       catch(Exception e)
       {
@@ -108,14 +108,35 @@
   || document.documentElement.clientHeight
   || document.body.clientHeight; 
 
+  var light=document.getElementById("light");
+  
+  //var oncol = "#69ebfa";
+  var oncol = "#91c6ff";
+  var offcol = "#799ced";
+  var on = "#799ced";
+  var off = "#799ced";
+
+  if(light != null)
+  {
+    on = oncol;
+    off = offcol;
+  }
+  else
+  {
+    on = offcol;
+    off = oncol;
+  }
 
   var pad=Math.floor(w/3/4.5);
 
-  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
-              "px; font-size:50px; border-radius: 25px; background-color: #799ced;";
+  var onStyle="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
+              "px; font-size:50px; border-radius: 25px; background-color: "+on+";";
 
-  document.getElementById("onButton").setAttribute("style", bSize);
-  document.getElementById("offButton").setAttribute("style", bSize);
+  var offStyle="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
+              "px; font-size:50px; border-radius: 25px; background-color: "+off+";";            
+
+  document.getElementById("onButton").setAttribute("style", onStyle);
+  document.getElementById("offButton").setAttribute("style", offStyle);
 
 </script>
 
