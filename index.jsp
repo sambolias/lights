@@ -145,10 +145,12 @@
   var light=document.getElementById("light");
   
   //var oncol = "#69ebfa";
-  var oncol = "#799ced; ";
-  var offcol = "#91c6ff; ";
-  var onattrib = "box-shadow: 0 5px #666; transform: translateY(7px);";
-  var offattrib = "box-shadow: 0 9px #999;";
+  var oncol = "#040d8c; "; //#799ced
+  var offcol = "#0717f7; ";  //#91c6ff
+  // var onattrib = "box-shadow: 0 5px #666; transform: translateY(7px);";
+  // var offattrib = "box-shadow: 0 9px #999;";
+   var onattrib = "box-shadow: 0 5px #02074a; transform: translateY(7px); border-color: #4754ff #7e87fc; ";
+  var offattrib = "box-shadow: 0 12px #040d8c; border-color: #0717f7 #4754ff;";
   var on = offcol+offattrib;
   var off = offcol+offattrib;
 
@@ -166,10 +168,10 @@
   var pad=Math.floor(w/3/7);
 
   var onStyle="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
-              "px; font-size:50px; border-radius: 25px; background-color: "+on;
+              "px; font-size:50px; color: white; border-radius: 25px; background-color: "+on;
 
   var offStyle="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
-              "px; font-size:50px; border-radius: 25px; background-color: "+off;            
+              "px; font-size:50px; color: white; border-radius: 25px; background-color: "+off;            
 
   document.getElementById("onButton").setAttribute("style", onStyle);
   document.getElementById("offButton").setAttribute("style", offStyle);
