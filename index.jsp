@@ -111,29 +111,31 @@
   var light=document.getElementById("light");
   
   //var oncol = "#69ebfa";
-  var oncol = "#91c6ff";
-  var offcol = "#799ced";
-  var on = "#799ced";
-  var off = "#799ced";
+  var oncol = "#799ced; ";
+  var offcol = "#91c6ff; ";
+  var onattrib = "box-shadow: 0 5px #666; transform: translateY(4px);";
+  var offattrib = "box-shadow: 0 9px #999;";
+  var on = offcol+offattrib;
+  var off = offcol+offattrib;
 
   if(light != null)
   {
-    on = oncol;
-    off = offcol;
+    on = oncol+onattrib;
+    off = offcol+offattrib;
   }
   else
   {
-    on = offcol;
-    off = oncol;
+    on = offcol+offattrib;
+    off = oncol+onattrib;
   }
 
   var pad=Math.floor(w/3/4.5);
 
   var onStyle="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
-              "px; font-size:50px; border-radius: 25px; background-color: "+on+";";
+              "px; font-size:50px; border-radius: 25px; background-color: "+on;
 
   var offStyle="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+
-              "px; font-size:50px; border-radius: 25px; background-color: "+off+";";            
+              "px; font-size:50px; border-radius: 25px; background-color: "+off;            
 
   document.getElementById("onButton").setAttribute("style", onStyle);
   document.getElementById("offButton").setAttribute("style", offStyle);
