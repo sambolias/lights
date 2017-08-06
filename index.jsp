@@ -1,5 +1,17 @@
 <html>
 
+  <style>
+
+    h1
+    {
+      margin: 50px;
+      padding: 50px;
+      text-align: center;
+      font-size: 100px;
+    }
+
+  </style>
+
   <head>
     <title>Basement Lights</title>
   </head>
@@ -29,9 +41,9 @@
         status = Files.readAllBytes(file);
 
         if(status[0]=='0')
-          out.println("The lights are off");
+          out.println("<span style=\"font-size: 50px; margin: auto; display: table;\">The lights are off</span>");
         else
-          out.println("The lights are on");
+          out.println("<span style=\"font-size: 50px; margin: auto; display: table; \">The lights are on</span>");
       }
       catch(Exception e)
       {
@@ -97,31 +109,16 @@
   || document.body.clientHeight; 
 
 
-  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:50px; margin:50px";
-  /////document.write(bSize);
+  var pad=Math.floor(w/3/4.5);
 
- // var bh=Math.floor(h/3)+"px;";
-  //var bw=Math.floor(w/2)+"px;";
-
-  //document.getElementById("onButton").style["height"] = bh;
- // document.getElementById("offButton").style["width"]  = bw;
+  var bSize="height:"+Math.floor(h/3)+"px; width:"+Math.floor(w/3)+"px; padding:"+pad+"px; margin:"+pad+"px; font-size:50px";
 
   document.getElementById("onButton").setAttribute("style", bSize);
   document.getElementById("offButton").setAttribute("style", bSize);
 
-  //var test=document.getElementById("onButton").getAttribute("name")+"is what its called";
-
-  //document.write(test);
-
 </script>
 
 
-
-
-<!-- <form method="post">
-<input type="submit" id="onButton" name="onButton" value="ON"  style="height:100px; width:100px; padding:50px; margin:50px"/>
-<input type="submit" id="offButton" name="offButton" value="OFF" style="height:100px; width:100px; padding:50px; margin:50px"/>
-</form> -->
 
   </body>
 </html>
