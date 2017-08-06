@@ -146,7 +146,7 @@
   
   //var oncol = "#69ebfa";
   var oncol = "#0717f7; "; //#799ced
-  var offcol = "#0210cf";  //#91c6ff
+  var offcol = "#0210cf;";  //#91c6ff
   // var onattrib = "box-shadow: 0 5px #666; transform: translateY(7px);";
   // var offattrib = "box-shadow: 0 9px #999;";
    var onattrib = "box-shadow: 0 5px #02074a; transform: translateY(7px); border-color: #4754ff #7e87fc; ";
